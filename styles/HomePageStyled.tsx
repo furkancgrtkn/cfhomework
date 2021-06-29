@@ -1,13 +1,6 @@
 import styled, { css } from "styled-components";
 import { Theme } from "pages/_app";
 
-export const Container = styled.div(
-  () => css`
-    max-width: 1200px;
-    margin: auto;
-  `
-);
-
 export const ImageWrapper = styled.div(
   () => css`
     position: relative;
@@ -23,7 +16,7 @@ export const SectionContainer = styled.section(
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 75px);
   `
 );
 

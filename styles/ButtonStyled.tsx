@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { Theme } from "pages/_app";
 import { BtnStyleProps } from "components/Button";
+
 export const Button = styled.button(
   ({ theme: { colors }, variant }: BtnStyleProps & { theme: Theme }) => css`
     padding: 0 20px;

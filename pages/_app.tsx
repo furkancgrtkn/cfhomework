@@ -120,6 +120,19 @@ export const GlobalStyle = createGlobalStyle(
     .col {
       flex-direction: column;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .mt-2 {
+      margin-top: 20px;
+    }
+
+    .mt-4 {
+      margin-top: 40px;
+    }
   `
 );
 
