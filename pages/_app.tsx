@@ -1,5 +1,11 @@
+import React from "react";
 import type { AppProps } from "next/app";
-import { createGlobalStyle, css, ThemeProvider } from "styled-components";
+import {
+  createGlobalStyle,
+  css,
+  ThemeProvider,
+  ThemeContext,
+} from "styled-components";
 import Router from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
@@ -145,3 +151,5 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 export default MyApp;
+
+export const useTheme = () => React.useContext(ThemeContext) || {};

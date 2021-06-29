@@ -20,7 +20,7 @@ export default function Home() {
         </Head>
         <SectionContainer>
           <ImageWrapper>
-            <Image alt="Chess" src={chess} placeholder="blur" layout="fill" />
+            <Image alt="Chess" src={chess} layout="fill" />
           </ImageWrapper>
           <div className="d-flex-center col">
             <Slogan>
