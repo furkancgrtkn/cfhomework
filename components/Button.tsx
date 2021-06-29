@@ -4,6 +4,8 @@ import { Button as ButtonStyled, ButtonText } from "styles/ButtonStyled";
 export interface Props {
   children: React.ReactNode;
   onClick?: () => void;
+  className?: string;
+  type?: "button" | "submit" | "reset";
 }
 
 export interface BtnStyleProps {
@@ -14,9 +16,16 @@ export default function Button({
   children,
   variant,
   onClick,
+  type,
+  className,
 }: Props & BtnStyleProps) {
   return (
-    <ButtonStyled onClick={onClick} variant={variant}>
+    <ButtonStyled
+      type={type}
+      className={className}
+      onClick={onClick}
+      variant={variant}
+    >
       <ButtonText variant={variant}>{children}</ButtonText>
     </ButtonStyled>
   );

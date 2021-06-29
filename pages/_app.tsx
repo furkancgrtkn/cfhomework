@@ -146,8 +146,16 @@ export const GlobalStyle = createGlobalStyle(
       margin-top: 40px;
     }
 
+    .mr-1 {
+      margin-right: 10px;
+    }
+
     .flex-between {
       justify-content: space-between;
+    }
+
+    .flex-end {
+      justify-content: flex-end;
     }
   `
 );

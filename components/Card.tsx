@@ -25,8 +25,8 @@ export default function Card({ item }: { item: InvProps }) {
       </Header>
       <span className="card-md-text">Details</span>
       <Details>
-        {item.details.map((detail) => (
-          <li key={detail.id}>
+        {item.details.map((detail, i) => (
+          <li key={i}>
             <span>{detail.key}:</span> {detail.detail}
           </li>
         ))}

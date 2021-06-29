@@ -3,13 +3,13 @@ import Layout from "components/Layout/Layout";
 import Card from "components/Card";
 import { Header } from "styles/InvoicePageStyled";
 import Button from "components/Button";
+import Form from "components/Form";
 import { LabelStyleProps } from "components/Label";
 export interface InvProps {
   id: number;
   title: string;
   status: LabelStyleProps["status"];
   details: {
-    id: number;
     key: string;
     detail: string;
   }[];
@@ -21,12 +21,11 @@ export interface InvProps {
 export default function Invoices() {
   const initData: InvProps[] = [
     {
-      id: 1,
+      id: Math.floor(Math.random() * 10000),
       title: "Invoice 1",
       status: "paid",
       details: [
         {
-          id: 1,
           key: "Work",
           detail: "Work Detail",
         },
@@ -36,12 +35,11 @@ export default function Invoices() {
       totalInvoice: 99,
     },
     {
-      id: 2,
+      id: Math.floor(Math.random() * 10000),
       title: "Invoice 2",
       status: "paid",
       details: [
         {
-          id: 2,
           key: "Work",
           detail: "Work Detail",
         },
@@ -65,6 +63,7 @@ export default function Invoices() {
           ))}
         </div>
       </div>
+      <Form></Form>
     </Layout>
   );
 }
