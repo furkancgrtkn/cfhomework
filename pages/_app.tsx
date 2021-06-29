@@ -17,6 +17,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 export interface Theme {
   body?: string;
   colors?: any;
+  labels?: any;
 }
 
 const defaultTheme: Theme = {
@@ -25,6 +26,11 @@ const defaultTheme: Theme = {
     primaryDark: "#3B917F",
     primary: "#64FFDA",
     secondary: "#EEEEEE",
+  },
+  labels: {
+    unpaid: "#EEEEEE",
+    paid: "#64FFDA",
+    out: "#ff6464",
   },
 };
 

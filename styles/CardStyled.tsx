@@ -34,6 +34,7 @@ export const Header = styled.span(
     border-bottom: 1px solid #363c4a;
     padding-bottom: 10px;
     display: flex;
+    justify-content: space-between;
   `
 );
 

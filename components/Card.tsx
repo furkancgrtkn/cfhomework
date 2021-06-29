@@ -11,6 +11,7 @@ import {
 import { FiCreditCard, FiTrash2, FiMail } from "react-icons/fi";
 import { GoSettings } from "react-icons/go";
 import { useTheme } from "pages/_app";
+import Label from "./Label";
 
 export default function Card() {
   const theme = useTheme();
@@ -19,6 +20,7 @@ export default function Card() {
     <Wrapper>
       <Header>
         <Title>Invoice 1</Title>
+        <Label variant="paid" />
       </Header>
       <span className="card-md-text">Details</span>
       <Details>
