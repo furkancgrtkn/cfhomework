@@ -9,6 +9,7 @@ import {
 import Router from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -86,6 +87,22 @@ export const GlobalStyle = createGlobalStyle(
       outline: none;
     }
 
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+
     #nprogress .bar {
       background: ${colors.primaryDark} !important;
       height: 6px !important;
@@ -119,6 +136,75 @@ export const GlobalStyle = createGlobalStyle(
       border-radius: 50%;
     }
 
+    .react-datepicker-wrapper {
+      margin-bottom: 10px;
+    }
+    .react-datepicker__input-container {
+      input {
+        font-size: 14px;
+        font-weight: 500;
+        background: transparent;
+        border-radius: 5px;
+        border: 1px solid #363c4a;
+        color: ${colors.secondary};
+        padding: 5px 10px;
+        width: 100%;
+      }
+    }
+
+    .react-datepicker-popper[data-placement^="bottom"]
+      .react-datepicker__triangle::before,
+    .react-datepicker-popper[data-placement^="top"]
+      .react-datepicker__triangle::before,
+    .react-datepicker-popper[data-placement^="bottom"]
+      .react-datepicker__triangle::after,
+    .react-datepicker-popper[data-placement^="top"]
+      .react-datepicker__triangle::after {
+      border-bottom-color: #515a6e;
+    }
+
+    .react-datepicker {
+      background-color: #25272c;
+      border: 1px solid #515a6e;
+    }
+
+    .react-datepicker__header {
+      background-color: #25272c;
+      border-bottom: 1px solid #515a6e;
+    }
+
+    .react-datepicker__current-month,
+    .react-datepicker-time__header,
+    .react-datepicker-year-header,
+    .react-datepicker__day-name,
+    .react-datepicker__day,
+    .react-datepicker__time-name {
+      color: ${colors.secondary};
+    }
+
+    .react-datepicker__day--selected,
+    .react-datepicker__day--in-selecting-range,
+    .react-datepicker__day--in-range,
+    .react-datepicker__month-text--selected,
+    .react-datepicker__month-text--in-selecting-range,
+    .react-datepicker__month-text--in-range,
+    .react-datepicker__quarter-text--selected,
+    .react-datepicker__quarter-text--in-selecting-range,
+    .react-datepicker__quarter-text--in-range,
+    .react-datepicker__year-text--selected,
+    .react-datepicker__year-text--in-selecting-range,
+    .react-datepicker__year-text--in-range,
+    .react-datepicker__day--keyboard-selected,
+    .react-datepicker__month-text--keyboard-selected,
+    .react-datepicker__quarter-text--keyboard-selected,
+    .react-datepicker__year-text--keyboard-selected,
+    .react-datepicker__day:hover,
+    .react-datepicker__month-text:hover,
+    .react-datepicker__quarter-text:hover,
+    .react-datepicker__year-text:hover {
+      background-color: ${colors.primaryDark};
+    }
+
     .d-flex {
       display: flex;
     }
@@ -136,6 +222,10 @@ export const GlobalStyle = createGlobalStyle(
     .container {
       max-width: 1200px;
       margin: auto;
+    }
+
+    .mt-1 {
+      margin-top: 10px;
     }
 
     .mt-2 {
@@ -156,6 +246,29 @@ export const GlobalStyle = createGlobalStyle(
 
     .flex-end {
       justify-content: flex-end;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px;
+      height: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: ${colors.primaryDark};
+    }
+    ::-webkit-scrollbar-track-piece {
+      background-color: #25272c;
+    }
+    ::-webkit-scrollbar-thumb {
+      height: 50px;
+      background-color: ${colors.primaryDark};
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-corner {
+      background-color: ${colors.primaryDark};
+    }
+    ::-webkit-resizer {
+      background-color: ${colors.primaryDark};
     }
   `
 );

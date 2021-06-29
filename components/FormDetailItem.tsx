@@ -37,7 +37,6 @@ export default function FormDetailItem({
   return (
     <React.Fragment>
       <FormInput
-        required
         onChange={(e) => {
           setDetailKey(e.target.value);
         }}
@@ -45,7 +44,6 @@ export default function FormDetailItem({
         type="text"
       ></FormInput>
       <FormTextArea
-        required
         onChange={(e) => {
           setDetail(e.target.value);
         }}

@@ -31,7 +31,7 @@ export default function Invoices() {
         },
       ],
       notes: "Note",
-      dueDate: new Date(),
+      dueDate: new Date("2021-06-10T01:28:52+03:00"),
       totalInvoice: 99,
     },
     {
@@ -45,17 +45,21 @@ export default function Invoices() {
         },
       ],
       notes: "Note",
-      dueDate: new Date(),
+      dueDate: new Date("2021-06-10T01:28:52+03:00"),
       totalInvoice: 99,
     },
   ];
   const [invState, setInvState] = useState(initData);
+  const [open, setOpen] = useState(false);
+
   return (
     <Layout goHome>
       <div className="container">
         <div className="d-flex mt-2 flex-between">
           <Header>Welcome, 34 invoices found</Header>
-          <Button variant="primary">New Invoice</Button>
+          <Button onClick={() => setOpen(true)} variant="primary">
+            New Invoice
+          </Button>
         </div>
         <div className="mt-2">
           {invState.map((item) => (
@@ -63,7 +67,9 @@ export default function Invoices() {
           ))}
         </div>
       </div>
-      <Form></Form>
+      {open && (
+        <Form setInvState={setInvState} invState={invState} setOpen={setOpen} />
+      )}
     </Layout>
   );
 }

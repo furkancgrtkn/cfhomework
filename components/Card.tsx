@@ -13,10 +13,12 @@ import { GoSettings } from "react-icons/go";
 import { useTheme } from "pages/_app";
 import { InvProps } from "pages/invoices";
 import Label from "./Label";
+import moment from "moment";
 
 export default function Card({ item }: { item: InvProps }) {
   const theme = useTheme();
-
+  const dateString = moment(item.dueDate, "DD-MM-YYYY").format("MMM Do YY");
+  console.log(dateString);
   return (
     <Wrapper>
       <Header>
@@ -33,7 +35,7 @@ export default function Card({ item }: { item: InvProps }) {
       </Details>
       <span className="card-md-text">Notes: {item.notes}</span>
       <Infos>
-        <span>Due Date: {JSON.stringify(item.dueDate)}</span>
+        <span>Due Date: {dateString}</span>
       </Infos>
       <Actions>
         <Infos>

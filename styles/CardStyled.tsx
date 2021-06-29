@@ -10,6 +10,7 @@ export const Wrapper = styled.div(
     padding: 10px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 
     .card-md-text {
       font-size: 14px;

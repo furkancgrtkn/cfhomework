@@ -19,8 +19,8 @@ export const FormWrapper = styled.div(
       border-radius: 10px;
       width: 300px;
       padding: 15px;
-      display: flex;
-      flex-direction: column;
+      max-height: 70vh;
+      overflow-y: auto;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
     }
   `
