@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Wrapper,
   Title,
@@ -9,21 +9,27 @@ import {
   Infos,
 } from "styles/CardStyled";
 import { FiCreditCard, FiTrash2, FiMail } from "react-icons/fi";
-import { GoSettings } from "react-icons/go";
 import { useTheme } from "pages/_app";
 import { InvProps } from "pages/invoices";
 import Label from "./Label";
 import moment from "moment";
 
-export default function Card({ item }: { item: InvProps }) {
+export default function Card({
+  item,
+  onDelete,
+  onPay,
+}: {
+  item: InvProps;
+  onDelete: (e: number) => void;
+  onPay: (e: number) => void;
+}) {
   const theme = useTheme();
   const dateString = moment(item.dueDate, "DD-MM-YYYY").format("MMM Do YY");
-  console.log(dateString);
   return (
     <Wrapper>
       <Header>
         <Title>{item.title}</Title>
-        <Label status="paid" />
+        <Label status={item.status} />
       </Header>
       <span className="card-md-text">Details</span>
       <Details>
@@ -43,7 +49,11 @@ export default function Card({ item }: { item: InvProps }) {
         </Infos>
         <div className="d-flex-center">
           <Action>
-            <FiTrash2 size="16" color={`${theme.colors.secondary}`}></FiTrash2>
+            <FiTrash2
+              onClick={() => onDelete(item.id)}
+              size="16"
+              color={`${theme.colors.secondary}`}
+            ></FiTrash2>
           </Action>
 
           <Action>
@@ -53,15 +63,9 @@ export default function Card({ item }: { item: InvProps }) {
           <Action>
             <FiCreditCard
               size="16"
+              onClick={() => onPay(item.id)}
               color={`${theme.colors.secondary}`}
             ></FiCreditCard>
-          </Action>
-
-          <Action>
-            <GoSettings
-              size="16"
-              color={`${theme.colors.secondary}`}
-            ></GoSettings>
           </Action>
         </div>
       </Actions>

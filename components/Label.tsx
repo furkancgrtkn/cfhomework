@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { LabelStyled } from "styles/LabelStyled";
 
 export interface LabelStyleProps {
@@ -10,5 +10,6 @@ export default function Label({ status }: LabelStyleProps) {
     if (status === "out") return "out of date";
     return status;
   };
+
   return <LabelStyled status={status}>{handleStatus(status)}</LabelStyled>;
 }
