@@ -3,7 +3,6 @@ import { ImageWrapper, Slogan, SectionContainer } from "styles/HomePageStyled";
 import Layout from "components/Layout/Layout";
 import Image from "next/image";
 import chess from "public/images/render001.png";
-import Button from "components/Button";
 
 export default function Home() {
   return (
@@ -20,7 +19,7 @@ export default function Home() {
         </Head>
         <SectionContainer>
           <ImageWrapper>
-            <Image alt="Chess" src={chess} layout="fill" />
+            <Image alt="Chess" src={chess} placeholder="blur" layout="fill" />
           </ImageWrapper>
           <div className="d-flex-center col">
             <Slogan>

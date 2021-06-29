@@ -145,6 +145,10 @@ export const GlobalStyle = createGlobalStyle(
     .mt-4 {
       margin-top: 40px;
     }
+
+    .flex-between {
+      justify-content: space-between;
+    }
   `
 );
 

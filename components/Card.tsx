@@ -11,36 +11,33 @@ import {
 import { FiCreditCard, FiTrash2, FiMail } from "react-icons/fi";
 import { GoSettings } from "react-icons/go";
 import { useTheme } from "pages/_app";
+import { InvProps } from "pages/invoices";
 import Label from "./Label";
 
-export default function Card() {
+export default function Card({ item }: { item: InvProps }) {
   const theme = useTheme();
 
   return (
     <Wrapper>
       <Header>
-        <Title>Invoice 1</Title>
-        <Label variant="paid" />
+        <Title>{item.title}</Title>
+        <Label status="paid" />
       </Header>
       <span className="card-md-text">Details</span>
       <Details>
-        <li>
-          <span>Key:</span> Detail
-        </li>
-        <li>
-          <span>Key:</span> Detail
-        </li>
-        <li>
-          <span>Key:</span> Detail
-        </li>
+        {item.details.map((detail) => (
+          <li key={detail.id}>
+            <span>{detail.key}:</span> {detail.detail}
+          </li>
+        ))}
       </Details>
-      <span className="card-md-text">Notes: ----</span>
+      <span className="card-md-text">Notes: {item.notes}</span>
       <Infos>
-        <span>Due Date: 10.08.2021</span>
+        <span>Due Date: {JSON.stringify(item.dueDate)}</span>
       </Infos>
       <Actions>
         <Infos>
-          <span>Total Invoice: 99$</span>
+          <span>Total Invoice: {item.totalInvoice}$</span>
         </Infos>
         <div className="d-flex-center">
           <Action>

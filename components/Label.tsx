@@ -2,13 +2,13 @@ import React from "react";
 import { LabelStyled } from "styles/LabelStyled";
 
 export interface LabelStyleProps {
-  variant: "paid" | "unpaid" | "out";
+  status: "paid" | "unpaid" | "out";
 }
 
-export default function Label({ variant }: LabelStyleProps) {
-  const handleVariant = (variant: LabelStyleProps["variant"]) => {
-    if (variant === "out") return "out of date";
-    return variant;
+export default function Label({ status }: LabelStyleProps) {
+  const handleStatus = (status: LabelStyleProps["status"]) => {
+    if (status === "out") return "out of date";
+    return status;
   };
-  return <LabelStyled variant={variant}>{handleVariant(variant)}</LabelStyled>;
+  return <LabelStyled status={status}>{handleStatus(status)}</LabelStyled>;
 }
