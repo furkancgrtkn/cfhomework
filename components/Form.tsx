@@ -10,6 +10,7 @@ import FormDetailItem from "./FormDetailItem";
 import { InvProps } from "pages/invoices";
 import Button from "./Button";
 import DatePicker from "react-datepicker";
+import moment from "moment";
 
 export default function Form({
   invState,
@@ -30,10 +31,13 @@ export default function Form({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (title && notes && allDetails.length > 0 && invTotal && startDate) {
+      const date1 = moment(new Date());
+      const date2 = moment(startDate);
+      const diff = date2.diff(date1);
       const data: InvProps = {
         id: Math.floor(Math.random() * 10000),
         title: title,
-        status: "unpaid",
+        status: diff < 0 ? "out" : "unpaid",
         details: allDetails,
         notes: notes,
         dueDate: startDate,

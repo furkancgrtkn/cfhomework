@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   Wrapper,
   Title,
@@ -25,6 +25,7 @@ export default function Card({
 }) {
   const theme = useTheme();
   const dateString = moment(item.dueDate, "DD-MM-YYYY").format("MMM Do YY");
+
   return (
     <Wrapper>
       <Header>
