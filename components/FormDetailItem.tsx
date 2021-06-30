@@ -30,7 +30,6 @@ export default function FormDetailItem({
       const oldData = allDetails;
       oldData[index] = upData;
       setAllDetails(oldData);
-      console.log(oldData);
     }
   }, [detail, detailKey, allDetails, index, setAllDetails]);
 

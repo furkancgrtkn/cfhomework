@@ -104,7 +104,6 @@ export default function Invoices() {
     const editData = invState.filter((k) => k.id === e);
     const oldData = invState.filter((k) => k.id !== e);
     setInvState([{ ...editData[0], status: status }, ...oldData]);
-    console.log(invState);
   };
 
   return (

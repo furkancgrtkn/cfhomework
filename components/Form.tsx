@@ -37,7 +37,12 @@ export default function Form({
       const data: InvProps = {
         id: Math.floor(Math.random() * 10000),
         title: title,
-        status: diff < 0 ? "out" : "unpaid",
+        status:
+          date1.format("MMM Do YY") == date2.format("MMM Do YY")
+            ? "unpaid"
+            : diff < 0
+            ? "out"
+            : "unpaid",
         details: allDetails,
         notes: notes,
         dueDate: startDate,
