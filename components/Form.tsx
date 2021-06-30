@@ -50,6 +50,8 @@ export default function Form({
       };
       setInvState([...invState, data]);
       setOpen(false);
+    } else {
+      window.alert("Please fill in all fields");
     }
   };
   return (
