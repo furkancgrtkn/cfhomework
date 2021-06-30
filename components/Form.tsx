@@ -27,9 +27,10 @@ export default function Form({
   const [title, setTitle] = useState<InvProps["title"]>();
   const [notes, setNotes] = useState<InvProps["notes"]>();
   const [invTotal, setInvTotal] = useState<InvProps["totalInvoice"]>();
-
+  const [err, sendErr] = useState(false);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (err) return window.alert("Please fill in all fields");
     if (title && notes && allDetails.length > 0 && invTotal && startDate) {
       const date1 = moment(new Date());
       const date2 = moment(startDate);
@@ -62,6 +63,7 @@ export default function Form({
           <FormInput
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
+            maxLength={20}
             type="text"
           ></FormInput>
         </FormItem>
@@ -72,6 +74,7 @@ export default function Form({
           </FormLabel>
           {Array.from(Array(detailsCount)).map((e, i) => (
             <FormDetailItem
+              sendErr={sendErr}
               allDetails={allDetails}
               setAllDetails={setAllDetails}
               key={i}

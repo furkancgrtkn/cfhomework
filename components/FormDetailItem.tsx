@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { FormInput, FormTextArea } from "styles/FormStyled";
 import { InvProps } from "pages/invoices";
+import { sendError } from "next/dist/next-server/server/api-utils";
 
 export default function FormDetailItem({
   allDetails,
   setAllDetails,
   index,
+  sendErr,
 }: {
   allDetails: InvProps["details"];
+  sendErr: React.Dispatch<React.SetStateAction<boolean>>;
   setAllDetails: React.Dispatch<
     React.SetStateAction<
       {
@@ -23,6 +26,7 @@ export default function FormDetailItem({
 
   useEffect(() => {
     if (detail && detailKey) {
+      sendErr(false);
       const upData = {
         key: detailKey,
         detail: detail,
@@ -30,8 +34,10 @@ export default function FormDetailItem({
       const oldData = allDetails;
       oldData[index] = upData;
       setAllDetails(oldData);
+    } else {
+      sendErr(true);
     }
-  }, [detail, detailKey, allDetails, index, setAllDetails]);
+  }, [detail, detailKey, allDetails, index, setAllDetails, sendErr]);
 
   return (
     <React.Fragment>

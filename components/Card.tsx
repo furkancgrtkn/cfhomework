@@ -53,13 +53,13 @@ export default function Card({
             <FiTrash2
               onClick={() => onDelete(item.id)}
               size="16"
-              color={`${theme.colors.secondary}`}
+              color={theme.colors.secondary}
             ></FiTrash2>
           </Action>
 
           <a href="mailto:furkan.cigirtkan@gmail.com">
             <Action>
-              <FiMail size="16" color={`${theme.colors.secondary}`}></FiMail>
+              <FiMail size="16" color={theme.colors.secondary}></FiMail>
             </Action>
           </a>
 
@@ -67,7 +67,7 @@ export default function Card({
             <FiCreditCard
               size="16"
               onClick={() => onPay(item.id)}
-              color={`${theme.colors.secondary}`}
+              color={theme.colors.secondary}
             ></FiCreditCard>
           </Action>
         </div>
