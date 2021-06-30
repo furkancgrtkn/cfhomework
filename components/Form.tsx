@@ -31,6 +31,12 @@ export default function Form({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    allDetails.map((e) => {
+      if (e.key.trim() === "" || e.detail.trim() === "") {
+        return window.alert("Please fill in all fields");
+      }
+    });
+
     if (title?.trim() === "" || notes?.trim() === "") {
       return window.alert("Please fill in all fields");
     }
