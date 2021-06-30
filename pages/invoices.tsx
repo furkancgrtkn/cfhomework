@@ -100,17 +100,11 @@ export default function Invoices() {
     }
   };
 
-  const onEffectFunc = (e: number, status: InvProps["status"]) => {
-    const editData = invState.filter((k) => k.id === e);
-    const oldData = invState.filter((k) => k.id !== e);
-    setInvState([{ ...editData[0], status: status }, ...oldData]);
-  };
-
   return (
     <Layout goHome>
       <div className="container">
         <div className="d-flex mt-2 flex-between">
-          <Header>Welcome, 34 invoices found</Header>
+          <Header>Welcome, {invState.length} invoices found</Header>
           <Button onClick={() => setOpen(true)} variant="primary">
             New Invoice
           </Button>
