@@ -57,9 +57,11 @@ export default function Card({
             ></FiTrash2>
           </Action>
 
-          <Action>
-            <FiMail size="16" color={`${theme.colors.secondary}`}></FiMail>
-          </Action>
+          <a href="mailto:furkan.cigirtkan@gmail.com">
+            <Action>
+              <FiMail size="16" color={`${theme.colors.secondary}`}></FiMail>
+            </Action>
+          </a>
 
           <Action>
             <FiCreditCard
