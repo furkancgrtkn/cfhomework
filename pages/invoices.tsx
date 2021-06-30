@@ -111,7 +111,9 @@ export default function Invoices() {
         </CardsHeader>
         <Cards>
           <div className="card-con">
-            <SubTitle>Unpaid</SubTitle>
+            <SubTitle>
+              Unpaid ({invState.filter((f) => f.status === "unpaid").length})
+            </SubTitle>
             {invState
               .filter((f) => f.status === "unpaid")
               .map((item) => (
@@ -127,7 +129,9 @@ export default function Invoices() {
           </div>
 
           <div className="card-con">
-            <SubTitle>Paid</SubTitle>
+            <SubTitle>
+              Paid ({invState.filter((f) => f.status === "paid").length})
+            </SubTitle>
             {invState
               .filter((f) => f.status === "paid")
               .map((item) => (
@@ -143,7 +147,9 @@ export default function Invoices() {
           </div>
 
           <div className="card-con">
-            <SubTitle>Out Of Date</SubTitle>
+            <SubTitle>
+              Out Of Date ({invState.filter((f) => f.status === "out").length})
+            </SubTitle>
             {invState
               .filter((f) => f.status === "out")
               .map((item) => (

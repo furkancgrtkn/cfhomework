@@ -97,7 +97,7 @@ export default function Form({
           />
         </FormItem>
         <FormItem className="d-flex col">
-          <FormLabel>Total Invoice</FormLabel>
+          <FormLabel>Total Invoice ($)</FormLabel>
           <FormInput
             onChange={(e) => setInvTotal(parseInt(e.target.value))}
             type="number"
