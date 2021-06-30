@@ -25,6 +25,9 @@ export default function FormDetailItem({
   const [detail, setDetail] = useState<string>();
 
   useEffect(() => {
+    if (detail?.trim() === "" || detailKey?.trim() === "") {
+      return sendErr(true);
+    }
     if (detail && detailKey) {
       sendErr(false);
       const upData = {

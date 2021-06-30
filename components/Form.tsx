@@ -30,6 +30,11 @@ export default function Form({
   const [err, sendErr] = useState(false);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (title?.trim() === "" || notes?.trim() === "") {
+      return window.alert("Please fill in all fields");
+    }
+
     if (err) return window.alert("Please fill in all fields");
     if (title && notes && allDetails.length > 0 && invTotal && startDate) {
       const date1 = moment(new Date());
@@ -153,14 +158,13 @@ export default function Form({
           <FormLabel>Total Invoice ($)</FormLabel>
           <FormInput
             type="number"
-            value={invTotal?.toString() || ""}
+            value={invTotal?.toString() || "0"}
             onKeyDown={(e: any) => {
               if (alphabets.includes(e.key) || e.key === "e") {
                 setInvTotal(0);
               }
             }}
             onChange={(e) => {
-              console.log(e.target.value);
               setInvTotal(parseInt(e.target.value));
             }}
           ></FormInput>
