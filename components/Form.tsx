@@ -55,6 +55,59 @@ export default function Form({
       window.alert("Please fill in all fields");
     }
   };
+
+  const alphabets = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
   return (
     <FormWrapper>
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -99,8 +152,17 @@ export default function Form({
         <FormItem className="d-flex col">
           <FormLabel>Total Invoice ($)</FormLabel>
           <FormInput
-            onChange={(e) => setInvTotal(parseInt(e.target.value))}
             type="number"
+            value={invTotal?.toString() || ""}
+            onKeyDown={(e: any) => {
+              if (alphabets.includes(e.key) || e.key === "e") {
+                setInvTotal(0);
+              }
+            }}
+            onChange={(e) => {
+              console.log(e.target.value);
+              setInvTotal(parseInt(e.target.value));
+            }}
           ></FormInput>
         </FormItem>
         <div className="d-flex flex-end">
