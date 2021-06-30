@@ -57,11 +57,14 @@ export default function Card({
             ></FiTrash2>
           </Action>
 
-          <a href="mailto:furkan.cigirtkan@gmail.com">
-            <Action>
+          <Action>
+            <a
+              className="d-flex w-fit"
+              href="mailto:furkan.cigirtkan@gmail.com"
+            >
               <FiMail size="16" color={theme.colors.secondary}></FiMail>
-            </Action>
-          </a>
+            </a>
+          </Action>
 
           <Action>
             <FiCreditCard

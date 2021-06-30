@@ -250,6 +250,9 @@ export const GlobalStyle = createGlobalStyle(
       justify-content: flex-end;
     }
 
+    .w-fit {
+      width: fit-content;
+    }
     ::-webkit-scrollbar {
       width: 4px;
       height: 3px;
