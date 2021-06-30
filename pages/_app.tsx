@@ -53,6 +53,8 @@ export const GlobalStyle = createGlobalStyle(
     body {
       background-color: ${body};
       color: ${colors.textColorPrimary};
+      min-width: 320px;
+      min-height: 100vh;
     }
 
     h1,

@@ -30,5 +30,8 @@ export const Header = styled.h1(
     font-weight: 600;
     cursor: default;
     user-select: none;
+    @media (max-width: 968px) {
+      font-size: 24px;
+    }
   `
 );

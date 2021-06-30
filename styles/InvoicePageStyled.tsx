@@ -6,9 +6,9 @@ export const Header = styled.h2(
     font-size: 24px;
     color: ${colors.secondary};
     text-align: center;
-    margin-bottom: 40px;
     letter-spacing: 0.025em;
     line-height: 1.3;
+    margin-bottom: 10px;
   `
 );
 
@@ -29,6 +29,26 @@ export const Cards = styled.div(
     justify-content: space-between;
     .card-con {
       width: 300px;
+    }
+    @media (max-width: 1020px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  `
+);
+
+export const CardsHeader = styled.div(
+  () => css`
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    @media (max-width: 1020px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   `
 );

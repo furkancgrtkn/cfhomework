@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "components/Layout/Layout";
 import Card from "components/Card";
-import { Header, SubTitle, Cards } from "styles/InvoicePageStyled";
+import { Header, SubTitle, Cards, CardsHeader } from "styles/InvoicePageStyled";
 import Button from "components/Button";
 import Form from "components/Form";
 import { LabelStyleProps } from "components/Label";
@@ -103,12 +103,12 @@ export default function Invoices() {
   return (
     <Layout goHome>
       <div className="container">
-        <div className="d-flex mt-2 flex-between">
+        <CardsHeader>
           <Header>Welcome, {invState.length} invoices found</Header>
           <Button onClick={() => setOpen(true)} variant="primary">
             New Invoice
           </Button>
-        </div>
+        </CardsHeader>
         <Cards>
           <div className="card-con">
             <SubTitle>Unpaid</SubTitle>
