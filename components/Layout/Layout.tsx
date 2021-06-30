@@ -13,6 +13,8 @@ export default function Layout({
     <Container>
       <Head>
         <title>Invoice</title>
+        <meta name="description" content="Track Your Invoices" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       <Navbar goHome={goHome} />
